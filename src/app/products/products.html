@@ -1,0 +1,21 @@
+<h2>Product Component</h2>
+<div class="product-wrapper">
+  @for (product of products(); track product) {
+    <div class="products-list">
+      <div class="individual-product">
+        <img [src]="`${product.productImagePath}`" alt="product1" />
+        <div class="product-details">
+          <span>ProductName: {{ product.productName }}</span>
+          <span>Price: {{ product.productPrice }}</span>
+          <span>Category: {{ product.category }}</span>
+          <span>Rating: {{ product.rating }}</span>
+
+          <span>quantity: {{ product.quantity }}</span>
+        </div>
+
+        <button (click)="addToCart(product)">Add to cart</button>
+        <button (click)="removeFromCart(product.id)">Remove from cart</button>
+      </div>
+    </div>
+  }
+</div>
